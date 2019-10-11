@@ -1,8 +1,23 @@
-NOTES
+Overview
+========
+You should be able to download ia using a browser. Directions [here](https://archive.org/services/docs/api/internetarchive/cli.html) say that all you need is a python installation.
+
+Once you have that, configure your credentials with 
+
+    $ ia configure
+
+Then create a CSV file (Excel should work) with the columns below, one row per file. (The first row should be the column names.) Once you have that set up, you can run
+
+    $ ia upload --spreadsheet=upload.csv
+
+Once that's done, you can get a list of URLs to the newly-created VBR MP3 files by running
+
+    $ python get_urls.py
+
+That script assumes that your CSV is called 'upload.csv'. You can edit the script to change the file name if you need to.
+
+Notes
 =====
-
-You should be able to download ia using a browser.
-
 I created a test using a public domain mp3:
 https://archive.org/details/adamtest_abwreck
 
